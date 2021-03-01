@@ -35,13 +35,13 @@ function sum(a: number, b: number): number {
 let res = sum(123, 345);
 // let res = sum(123, '456'); // 报错
 
-/* 3.字面量声明 */
+/* 3.使用字面量声明类型 */
 
 // 下面的语句相当于定义了一个a3常量；
 let a3: 10;
 // a3 = 11; // 尝试将a3赋值为11，报错；
 
-/* 4.联合类型 */
+/* 4.联合类型：| */
 
 let b4: "male" | "female";
 b4 = "male";
@@ -51,7 +51,7 @@ let c4: boolean | string;
 c4 = true;
 c4 = 'hello';
 
-/* 5.组合类型 */
+/* 5.组合类型：& */
 
 // &表示同时满足的类型
 let a5: { name: string } & { age: number };
@@ -90,9 +90,13 @@ s = a61;
 
 // 即：unknown 实际上就是一个类型安全的any
 // unknown类型的变量，不能直接赋值给其他变量
+// s = a62
 if (typeof a62 === "string") {
     s = a62;
 }
+// 类型断言 告诉编译器变量类型
+// s = a62 as string;
+// s = <string>a62;
 
 /* 6.3 void */
 
